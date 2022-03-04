@@ -1,0 +1,81 @@
+.filter
+  position: relative
+
+  &.is-open &__content
+    opacity: 1
+    pointer-events: all
+
+  &.is-open &__header
+    border-bottom-left-radius: 0
+    border-bottom-right-radius: 0
+
+  &__header
+    width: 100%
+    padding: 11px 20px
+
+    +roboto(m)
+    color: #FFFFFF
+    line-height: 100%
+
+    cursor: pointer
+    background: $blue
+    border-radius: 6px
+
+  &__header-ico
+    margin: 0 0 0 6px
+
+    pointer-events: none
+    transition: transform .1s
+
+    &.is-open
+      transform: rotate(180deg)
+
+  &__content
+    position: absolute
+    top: 100%
+
+    width: 100%
+    padding: 14px 61px 20px 22px
+
+    background: #F8F8F8
+    border-bottom-left-radius: 6px
+    border-bottom-right-radius: 6px
+    opacity: 0
+    pointer-events: none
+
+    @media (max-width: $mob)
+      padding: 14px 22px 20px 22px
+
+  &__list
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-gap: 77px 101px
+
+    @media (max-width: $tab)
+      grid-template-columns: repeat(3, 1fr)
+      grid-gap: 50px 70px
+
+    @media (max-width: $tab-sm)
+      grid-template-columns: repeat(2, 1fr)
+      grid-gap: 50px 50px
+
+    @media (max-width: $mob)
+      grid-template-columns: repeat(1, 1fr)
+      grid-gap: 40px 0
+
+  &__button
+    margin: 22px 0 0 0
+
+    +roboto(m)
+    font-size: 14px
+    line-height: 100%
+    color: $blue
+
+    span::before
+      content: ' больше '
+
+    &.is-active span::before
+      content: ' меньше '
+
+  .is-hidden
+    display: none

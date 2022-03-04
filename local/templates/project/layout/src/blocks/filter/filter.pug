@@ -1,0 +1,8 @@
+mixin filter(data)
+  .filter.js-dropdown&attributes(attributes)
+    .filter__header(data-type="dropdown-header")
+      | Подбор по параметрам
+      +svg('arrow-down').filter__header-ico(data-type="dropdown-ico")
+    .filter__content
+      if block
+        block

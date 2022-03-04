@@ -1,0 +1,72 @@
+input[type="checkbox"]
+  --active: transparent
+  --active-inner: transparent
+  --input-border: #B2B2B2
+  --input-border-hover: #B2B2B2
+  --background: transparent
+  --disabled: #F5F9FF
+  --disabled-inner: #E4ECFA
+
+  position: relative
+
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-shrink: 0
+  width: 12px
+  height: 12px
+  margin: 0
+  padding: 0
+
+  cursor: pointer
+  outline: none
+  box-shadow: none
+  border: 1px solid var(--input-border)
+  border-radius: 1px
+  background: var(--background)
+  appearance: none
+  -webkit-tap-highlight-color: transparent
+  -webkit-appearance: none
+
+  transition: background-color 0.3s ease, border-color 0.3s ease
+
+  &:after
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M2.93902 5.21994L0.882891 3.1472L0 4.03723L2.93902 7L9 0.890028L8.11711 0L2.93902 5.21994Z" fill="rgb(15, 116, 209)"/></svg>')
+
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 9px
+    height: 7px
+    margin: -1.5px 0 0 0
+
+    opacity: 0
+
+  &:checked
+    background: var(--active)
+    border: 1px solid var(--input-border-hover)
+
+    &:after
+      transition: opacity 0.1s ease
+
+      transform: 0.6s cubic-bezier(0.175, 0.88, 0.32, 1.2)
+
+
+  &:disabled
+    cursor: not-allowed
+    opacity: 0.7
+    background: var(--disabled)
+
+    &:checked
+      background: var(--disabled-inner)
+      border-color: var(--input-border)
+
+
+  &:not(.switch)
+    &:after
+      opacity: 0
+
+
+    &:checked
+      &:after
+        opacity: 1

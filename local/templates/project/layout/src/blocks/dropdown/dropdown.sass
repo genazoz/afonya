@@ -1,0 +1,106 @@
+.dropdown
+  position: relative
+
+  &.is-open > &__header
+    border-top-left-radius: 0
+    border-top-right-radius: 0
+
+  &.is-open > &__content
+    transform: translateY(0)
+    opacity: 1
+    pointer-events: all
+
+  &.dropdown--filter
+    .dropdown__header
+      transition: color .15s
+
+    .dropdown__header-button
+      position: absolute
+      right: 0
+
+      display: none
+
+      color: $blue
+
+      svg
+        pointer-events: none
+
+  &.dropdown--filter.is-checked
+    .dropdown__header
+      color: $blue
+      +roboto(m)
+
+    .dropdown__header-button
+      display: flex
+
+  &__header
+    display: flex
+    align-items: center
+    cursor: pointer
+
+    +roboto(r)
+    font-size: 12px
+    line-height: 14px
+    color: #222222
+
+    &-ico
+      margin: 0 0 0 6px
+
+      pointer-events: none
+      color: #B2B2B2
+
+      transition: transform .1s
+
+      &.is-open
+        transform: rotate(180deg)
+
+  &__content
+    position: absolute
+    z-index: 2
+
+    width: 100%
+    margin: 8px 0 0 0
+
+    background: #FFFFFF
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1)
+    border-radius: 3px
+    transform: translateY(20px)
+    opacity: 0
+    pointer-events: none
+
+  &__list
+    overflow-y: auto
+    max-height: 170px
+    padding: 6px
+
+  &__item
+    display: flex
+    align-items: center
+    max-width: 90%
+    margin: 0 0 6px 0
+
+    +roboto(r)
+    font-size: 12px
+    line-height: 130%
+    color: #222222
+
+    cursor: pointer
+
+    label
+      cursor: pointer
+
+    input[type="checkbox"]
+      margin-right: 6px
+
+  &__button
+    width: 100%
+    padding: 10px
+
+    +roboto(r)
+    font-size: 12px
+    line-height: 100%
+    color: #FFFFFF
+
+    background: $blue
+    border-bottom-left-radius: 3px
+    border-bottom-right-radius: 3px

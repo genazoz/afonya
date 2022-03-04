@@ -1,0 +1,88 @@
+extends ../templates/template.pug
+
+block content
+  include ../blocks/filter/filter
+  include ../blocks/dropdown/dropdown
+
+  section.s-filters.container
+    +filter.s-filters__filter
+      .filter__list
+        +dropdown({
+          type: "filter",
+          placeholder: "Вид",
+          checkboxes: [
+            {
+              id: 'chbx1',
+              text: 'Вид1'
+            },
+            {
+              id: 'chbx2',
+              text: 'Вид2'
+            },
+            {
+              id: 'chbx3',
+              text: 'Вид2'
+            },
+          ],
+          button: "Применить"
+        })
+        +dropdown({
+          type: "filter",
+          placeholder: "Бренд",
+          checkboxes: [
+            {
+              id: 'chbx4',
+              text: 'Вид1'
+            },
+            {
+              id: 'chbx5',
+              text: 'Вид2'
+            },
+            {
+              id: 'chbx6',
+              text: 'Вид2'
+            },
+          ],
+          button: "Применить"
+        })
+        +dropdown({
+          type: "filter",
+          placeholder: "Подвид",
+          checkboxes: [
+            {
+              id: 'chbx7',
+              text: 'Вид1'
+            },
+            {
+              id: 'chbx8',
+              text: 'Вид2'
+            },
+            {
+              id: 'chbx9',
+              text: 'Вид2'
+            },
+          ],
+          button: "Применить"
+        })
+        +dropdown({
+          type: "filter",
+          placeholder: "Бренд",
+          checkboxes: [
+            {
+              id: 'chbx10',
+              text: 'Вид1'
+            },
+            {
+              id: 'chbx11',
+              text: 'Вид2'
+            },
+            {
+              id: 'chbx12',
+              text: 'Вид2'
+            },
+          ],
+          button: "Применить"
+        })
+      button.filter__button Показать
+        span
+        | параметров (12)

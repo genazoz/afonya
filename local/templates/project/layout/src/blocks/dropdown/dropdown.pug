@@ -1,0 +1,16 @@
+mixin dropdown(data)
+  .dropdown(class=`${data.type === 'filter' ? 'dropdown--filter' : ''}`).js-dropdown
+    .dropdown__header(data-type='dropdown-header')= data.placeholder
+      +svg('arrow-down').i-arrow-down.dropdown__header-ico(data-type='dropdown-ico')
+      if(data.type === 'filter')
+        .dropdown__header-button
+          +svg('cross')
+    .dropdown__content
+      if(data.checkboxes)
+        ul.dropdown__list
+          each checkbox in data.checkboxes
+            li.dropdown__item
+              input(type="checkbox" id=`${checkbox.id}`)
+              label(for=`${checkbox.id}`)= checkbox.text
+      if(data.button)
+        +btn(data.button).dropdown__button
